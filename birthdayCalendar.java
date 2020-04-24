@@ -1,4 +1,4 @@
-/* This Programm should be calender were you can store the birthdays of your family or friends
+/* This Programm should be a calendar where you can store the birthdays of your family or friends
    It should order them by the next upcoming birthday. 
    You can check upcomming birthdays by command
    #EDIT
