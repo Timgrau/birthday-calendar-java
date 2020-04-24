@@ -49,24 +49,44 @@ class birthday {
     /* should give next upcomming birthday */
     static birthday thisyear(birthday all) {
 	int actualYear = Calendar.getInstance().get(Calendar.YEAR);
-	birthday y = new birthday(all.day, all.month, actualYear,all.name);
-	//LocalDate today = LocalDate.now();
-	//days = ChronoUnit.DAYS.between(today,all);
+	birthday y = new birthday(all.day, all.month, actualYear, all.name);
 	return y;
     }
+
+    static void nextBirthday(birthday all) {
+	
+	int actualYear = Calendar.getInstance().get(Calendar.YEAR);
+	birthday y = new birthday(all.day, all.month, actualYear, all.name);
+	
+	LocalDate today = LocalDate.now();
+	long days = ChronoUnit.DAYS.between(today,y.bday);
+	System.out.println(all.name+ "'s birthday is in "+days+" days");
+    }
+    
+    
+
+    
 }
 
 
 public class birthdayCalendar {
+
     
     public static void main (String[] args) {
 	
-	Scanner ein = new Scanner(System.in); 
+	Scanner ein = new Scanner(System.in);
 	birthday a = new birthday(11,07,1997, "Timo");
 	birthday b = new birthday(23,07,1995, "Sina");
+	birthday c = new birthday(11,06,1996, "Marvin");
 	a.output();
 	b.output();
-	birthday.thisyear(a).output();
-	//System.out.println(compare(a)+" Tage bis zum nächsten Geburtstag.");
+	c.output();
+	//birthday.thisyear(a).output();
+	//birthday.thisyear(b).output();
+	//birthday.thisyear(c).output();
+	birthday.nextBirthday(a);
+	birthday.nextBirthday(c);
+	birthday.nextBirthday(b);
+	
     }
 }
