@@ -78,6 +78,7 @@ public class birthdayCalendar {
 	birthday a = new birthday(11,07,1997, "Timo");
 	birthday b = new birthday(23,07,1995, "Sina");
 	birthday c = new birthday(11,06,1996, "Marvin");
+	birthday d = new birthday(20,08,1997,"Schatz <3");
 	a.output();
 	b.output();
 	c.output();
